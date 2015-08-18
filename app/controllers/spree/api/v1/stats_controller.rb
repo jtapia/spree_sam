@@ -16,8 +16,8 @@ module Spree
         private
 
         def check_params
-          params[:from] ||= 10
-          params[:until] ||= 1
+          params[:from] = params[:from] ? params[:from].to_i : 10
+          params[:until] = params[:until] ? params[:until].to_i : 0
         end
 
         def orders_stats
